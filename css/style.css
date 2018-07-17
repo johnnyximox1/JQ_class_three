@@ -1,0 +1,146 @@
+.anim {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+
+#draggable10 { width: 150px; height: 150px; padding: 0.5em; }
+#draggable1, #draggable2, #draggable3 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 0 10px 10px 0; }
+#draggable10 {background-color: red;}
+#draggable1 {background-color: green;}
+#draggable2 {background-color: yellow;}
+#draggable3 {background-color: blue;}
+
+
+
+.draggable { width: 90px; height: 90px; padding: 0.5em; float: left; margin: 0 10px 10px 0; }
+  #draggable4, #draggable5 { margin-bottom:20px; }
+  #draggabl6 { cursor: n-resize; }
+  #draggable7 { cursor: e-resize; }
+  #containment-wrapper { width: 95%; height:150px; border:2px solid #ccc; padding: 10px; }
+  h3 { clear: left; }
+
+ ul { list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; }
+li { margin: 5px; padding: 5px; width: 150px; }
+ #draggable11, #draggable12 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 0 10px 10px 0; }
+   .ui-autocomplete-category {
+    font-weight: bold;
+    padding: .2em .4em;
+    margin: .8em 0 .2em;
+    line-height: 1.5;
+  }
+
+    .custom-combobox {
+    position: relative;
+    display: inline-block;
+  }
+  .custom-combobox-toggle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: -1px;
+    padding: 0;
+  }
+  .custom-combobox-input {
+    margin: 0;
+    padding: 5px 10px;
+  }
+  #project-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  #project-icon {
+    float: left;
+    height: 32px;
+    width: 32px;
+  }
+  #project-description {
+    margin: 0;
+    padding: 0;
+  }
+   .shape {
+      margin-left: 4em;
+      margin-top: 2.5em;
+      height: 8em;
+      width: 8em;
+      box-shadow: 4px 4px 8px;
+      color: #ccc;
+      background-repeat: no-repeat;
+      background-size: 90%;
+      background-position: 50%;
+    }
+    .circle, .pill {
+      border-radius: 8em;
+    }
+    .pill, .rectangle {
+      width: 16em;
+    }
+    .square, .circle {
+      margin-left: 9em;
+    }
+    .border {
+      border: 2px solid #333333;
+    }
+    .toggles {
+      width: 200px;
+    }
+    .toggle-wrap, .shape {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .controls {
+      background: #ccc;
+      padding: 1em;
+      display: inline-block;
+    }
+ .ui-menu { width: 150px; }
+.ui-progressbar {
+    position: relative;
+  }
+  .progress-label {
+    position: absolute;
+    left: 50%;
+    top: 4px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+  }
+
+ #progressbar2 {
+    margin-top: 20px;
+  }
+ 
+  .progress-label {
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+  }
+ 
+  .ui-dialog-titlebar-close {
+    display: none;
+  }
+
+
+ #fieldset1 {
+      border: 0;
+    }
+    #label1 {
+      display: block;
+      margin: 30px 0 0 0;
+    }
+    .overflow {
+      height: 200px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Menu</title>
+        <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/media.css">
+        <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script> -->
+        <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+        
+  
+    </head>
+    <body>
+<h1> <a href="index.html">Home</a></h1>
+
+
+
+      
+
+        <ul id="menu">
+  <li class="ui-state-disabled"><div>Toys (n/a)</div></li>
+  <li><div>Books</div></li>
+  <li><div>Clothing</div></li>
+  <li><div>Electronics</div>
+    <ul>
+      <li class="ui-state-disabled"><div>Home Entertainment</div></li>
+      <li><div>Car Hifi</div></li>
+      <li><div>Utilities</div></li>
+    </ul>
+  </li>
+  <li><div>Movies</div></li>
+  <li><div>Music</div>
+    <ul>
+      <li><div>Rock</div>
+        <ul>
+          <li><div>Alternative</div></li>
+          <li><div>Classic</div></li>
+        </ul>
+      </li>
+      <li><div>Jazz</div>
+        <ul>
+          <li><div>Freejazz</div></li>
+          <li><div>Big Band</div></li>
+          <li><div>Modern</div></li>
+        </ul>
+      </li>
+      <li><div>Pop</div></li>
+    </ul>
+  </li>
+  <li class="ui-state-disabled"><div>Specials (n/a)</div></li>
+</ul>
+ 
+  
+  <ul id="menu2">
+  <li class="ui-widget-header"><div>Category 1</div></li>
+  <li><div>Option 1</div></li>
+  <li><div>Option 2</div></li>
+  <li><div>Option 3</div></li>
+  <li class="ui-widget-header"><div>Category 2</div></li>
+  <li><div>Option 4</div></li>
+  <li><div>Option 5</div></li>
+  <li><div>Option 6</div></li>
+</ul>
+
+
+<ul id="menu3">
+  <li>
+    <div><span class="ui-icon ui-icon-disk"></span>Save</div>
+  </li>
+  <li>
+    <div><span class="ui-icon ui-icon-zoomin"></span>Zoom In</div>
+  </li>
+  <li>
+    <div><span class="ui-icon ui-icon-zoomout"></span>Zoom Out</div>
+  </li>
+  <li class="ui-state-disabled">
+    <div><span class="ui-icon ui-icon-print"></span>Print...</div>
+  </li>
+  <li>
+    <div>Playback</div>
+    <ul>
+      <li>
+        <div><span class="ui-icon ui-icon-seek-start"></span>Prev</div>
+      </li>
+      <li>
+        <div><span class="ui-icon ui-icon-stop"></span>Stop</div>
+      </li>
+      <li>
+        <div><span class="ui-icon ui-icon-play"></span>Play</div>
+      </li>
+      <li>
+        <div><span class="ui-icon ui-icon-seek-end"></span>Next</div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <div>Learn more about this menu</div>
+  </li>
+</ul>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  -->
+        <!-- <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  -->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/Script.js"></script>
+        <script>
+             $( function() {
+    $( "#menu" ).menu();
+  } );
+              $( function() {
+    $( "#menu2" ).menu({
+      items: "> :not(.ui-widget-header)"
+    });
+  } );
+
+
+               $( function() {
+    $( "#menu" ).menu();
+  } );
+  </script>
+  <style>
+  .ui-menu { width: 150px; }
+  </script>
+  
+ 
+        </script>
+      
+    </body>
+</html>

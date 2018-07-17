@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Slider</title>
+        <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/media.css">
+        <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script> -->
+        <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+         <style>
+  #red, #green, #blue {
+    float: left;
+    clear: left;
+    width: 300px;
+    margin: 15px;
+  }
+  #swatch {
+    width: 120px;
+    height: 100px;
+    margin-top: 18px;
+    margin-left: 350px;
+    background-image: none;
+  }
+  #red .ui-slider-range { background: #ef2929; }
+  #red .ui-slider-handle { border-color: #ef2929; }
+  #green .ui-slider-range { background: #8ae234; }
+  #green .ui-slider-handle { border-color: #8ae234; }
+  #blue .ui-slider-range { background: #729fcf; }
+  #blue .ui-slider-handle { border-color: #729fcf; }
+
+    #custom-handle {
+    width: 3em;
+    height: 1.6em;
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
+  }
+
+   #eq > span {
+    height:120px; float:left; margin:15px
+  }
+  </style>
+  
+    </head>
+    <body>
+
+<h1> <a href="index.html">Home</a></h1>
+
+      
+  
+<body class="ui-widget-content" style="border:0;">
+ 
+<p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
+  <span class="ui-icon ui-icon-pencil" style="float:left; margin:-2px 5px 0 0;"></span>
+  Simple Colorpicker
+</p>
+ 
+<div id="red"></div>
+<div id="green"></div>
+<div id="blue"></div>
+ 
+<div id="swatch" class="ui-widget-content ui-corner-all"></div>
+
+<br> <br> <br>
+
+<div id="slider">
+  <div id="custom-handle" class="ui-slider-handle"></div>
+</div>
+
+<br> <br> <br> 
+ 
+<p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
+  <span class="ui-icon ui-icon-volume-on" style="float:left; margin:-2px 5px 0 0;"></span>
+  Master volume
+</p>
+ 
+<div id="master" style="width:260px; margin:15px;"></div>
+ 
+<p class="ui-state-default ui-corner-all" style="padding:4px;margin-top:4em;">
+  <span class="ui-icon ui-icon-signal" style="float:left; margin:-2px 5px 0 0;"></span>
+  Graphic EQ
+</p>
+ 
+<div id="eq">
+  <span>88</span>
+  <span>77</span>
+  <span>55</span>
+  <span>33</span>
+  <span>40</span>
+  <span>45</span>
+  <span>70</span>
+</div>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  -->
+        <!-- <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  -->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/Script.js"></script>
+        <script>
+  $( function() {
+    function hexFromRGB(r, g, b) {
+      var hex = [
+        r.toString( 16 ),
+        g.toString( 16 ),
+        b.toString( 16 )
+      ];
+      $.each( hex, function( nr, val ) {
+        if ( val.length === 1 ) {
+          hex[ nr ] = "0" + val;
+        }
+      });
+      return hex.join( "" ).toUpperCase();
+    }
+    function refreshSwatch() {
+      var red = $( "#red" ).slider( "value" ),
+        green = $( "#green" ).slider( "value" ),
+        blue = $( "#blue" ).slider( "value" ),
+        hex = hexFromRGB( red, green, blue );
+      $( "#swatch" ).css( "background-color", "#" + hex );
+    }
+ 
+    $( "#red, #green, #blue" ).slider({
+      orientation: "horizontal",
+      range: "min",
+      max: 255,
+      value: 127,
+      slide: refreshSwatch,
+      change: refreshSwatch
+    });
+    $( "#red" ).slider( "value", 255 );
+    $( "#green" ).slider( "value", 140 );
+    $( "#blue" ).slider( "value", 60 );
+  } );
+
+   $( function() {
+    var handle = $( "#custom-handle" );
+    $( "#slider" ).slider({
+      create: function() {
+        handle.text( $( this ).slider( "value" ) );
+      },
+      slide: function( event, ui ) {
+        handle.text( ui.value );
+      }
+    });
+  } );
+
+    $( function() {
+    // setup master volume
+    $( "#master" ).slider({
+      value: 60,
+      orientation: "horizontal",
+      range: "min",
+      animate: true
+    });
+    // setup graphic EQ
+    $( "#eq > span" ).each(function() {
+      // read initial values from markup and remove that
+      var value = parseInt( $( this ).text(), 10 );
+      $( this ).empty().slider({
+        value: value,
+        range: "min",
+        animate: true,
+        orientation: "vertical"
+      });
+    });
+  } );
+  </script>
+    </body>
+</html>

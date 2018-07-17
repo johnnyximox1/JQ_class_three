@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Droppable</title>
+        <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/media.css">
+        <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script> -->
+        <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+        <style>
+               #draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+  #droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+  #droppable2 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+  #draggable2, #draggable-nonvalid { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+  </style>
+        </style>
+        </style>
+    </head>
+    <body>
+<h1> <a href="index.html">Home</a></h1>
+
+
+
+
+      
+          <div id="draggable" class="ui-widget-content">
+  <p>Drag me to my target</p>
+</div>
+ 
+<div id="droppable" class="ui-widget-header">
+  <p>Drop here</p>
+</div>
+ 
+ <div id="draggable-nonvalid" class="ui-widget-content">
+  <p>I'm draggable but can't be dropped</p>
+</div>
+ 
+<div id="draggable2" class="ui-widget-content">
+  <p>Drag me to my target</p>
+</div>
+ 
+<div id="droppable2" class="ui-widget-header">
+  <p>accept: '#draggable'</p>
+</div>
+
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <!-- <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/Script.js"></script>
+          <script>
+              $( function() {
+    $( "#draggable" ).draggable();
+    $( "#droppable" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+      }
+    });
+  } );
+               $( function() {
+    $( "#draggable2, #draggable-nonvalid" ).draggable();
+    $( "#droppable2" ).droppable({
+      accept: "#draggable2",
+      classes: {
+        "ui-droppable-active": "ui-state-active",
+        "ui-droppable-hover": "ui-state-hover"
+      },
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+      }
+    });
+  } );
+        </script>
+    </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Dragabble</title>
+        <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/media.css">
+        <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script> -->
+        <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+        <style>
+        
+        </style>
+    </head>
+    <body>
+<h1> <a href="index.html">Home</a></h1>
+
+
+
+      
+        
+        <div id="draggable10" class="ui-widget-content">
+            <p>Drag me around</p>
+        </div>
+        <div id="draggable1" class="ui-widget-content">
+  <p>Scroll set to true, default settings</p>
+</div>
+ 
+<div id="draggable2" class="ui-widget-content">
+  <p>scrollSensitivity set to 100</p>
+</div>
+ 
+<div id="draggable3" class="ui-widget-content">
+  <p>scrollSpeed set to 100</p>
+</div>
+ 
+<!-- 3rd drag -->
+
+<h3>Constrain movement along an axis:</h3>
+ 
+<div id="draggable4" class="draggable ui-widget-content">
+  <p>I can be dragged only vertically</p>
+</div>
+ 
+<div id="draggable5" class="draggable ui-widget-content">
+  <p>I can be dragged only horizontally</p>
+</div>
+ 
+<h3>Or to within another DOM element:</h3>
+<div id="containment-wrapper">
+  <div id="draggable6" class="draggable ui-widget-content">
+    <p>I'm contained within the box</p>
+  </div>
+ 
+  <div class="draggable ui-widget-content">
+    <p id="draggable7" class="ui-widget-header">I'm contained within my parent</p>
+  </div>
+</div>
+
+<ul>
+  <li id="draggable9" class="ui-state-highlight">Drag me down</li>
+</ul>
+ 
+<ul id="sortable">
+  <li class="ui-state-default">Item 1</li>
+  <li class="ui-state-default">Item 2</li>
+  <li class="ui-state-default">Item 3</li>
+  <li class="ui-state-default">Item 4</li>
+  <li class="ui-state-default">Item 5</li>
+</ul>
+
+<!--  -->
+<div id="draggable11" class="ui-widget-content">
+  <p>Revert the original</p>
+</div>
+ 
+<div id="draggable12" class="ui-widget-content">
+  <p>Revert the helper</p>
+</div>
+
+
+
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <!-- <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/Script.js"></script>
+        <script>
+    $( function() {
+    $( "#draggable10" ).draggable();
+  } );
+     $( function() {
+    $( "#draggable1" ).draggable({ scroll: true });
+    $( "#draggable2" ).draggable({ scroll: true, scrollSensitivity: 100 });
+    $( "#draggable3" ).draggable({ scroll: true, scrollSpeed: 100 });
+  } );
+       $( function() {
+    $( "#draggable4" ).draggable({ axis: "y" });
+    $( "#draggable5" ).draggable({ axis: "x" });
+ 
+    $( "#draggable6" ).draggable({ containment: "#containment-wrapper", scroll: false });
+    $( "#draggable7" ).draggable({ containment: "parent" });
+  } );
+        $( function() {
+    $( "#sortable" ).sortable({
+      revert: true
+    });
+    $( "#draggable9" ).draggable({
+      connectToSortable: "#sortable",
+      helper: "clone",
+      revert: "invalid"
+    });
+    $( "ul, li" ).disableSelection();
+  } );
+
+         $( function() {
+    $( "#draggable11" ).draggable({ revert: true });
+    $( "#draggable12" ).draggable({ revert: true, helper: "clone" });
+  } );
+  </script>
+    </body>
+</html>

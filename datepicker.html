@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Date Picker</title>
+        <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/media.css">
+        <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script> -->
+        <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+        
+  
+    </head>
+    <body>
+<h1> <a href="index.html">Home</a></h1>
+
+
+<p>Date: <input type="text" id="datepicker4"></p>
+      
+  <p>Date: <input type="text" id="datepicker" size="30"></p>
+ 
+<p>Animations:<br>
+  <select id="anim">
+    <option value="show">Show (default)</option>
+    <option value="slideDown">Slide down</option>
+    <option value="fadeIn">Fade in</option>
+    <option value="blind">Blind (UI Effect)</option>
+    <option value="bounce">Bounce (UI Effect)</option>
+    <option value="clip">Clip (UI Effect)</option>
+    <option value="drop">Drop (UI Effect)</option>
+    <option value="fold">Fold (UI Effect)</option>
+    <option value="slide">Slide (UI Effect)</option>
+    <option value="">None</option>
+  </select>
+</p>
+
+
+Date: <div id="datepicker2"></div>
+
+<p>Date: <input type="text" id="datepicker3"></p>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+        <!-- <script src="js/jquery-ui.js"></script> -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/Script.js"></script>
+         <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+    $( "#anim" ).on( "change", function() {
+      $( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
+    });
+  } );
+
+   $( function() {
+    $( "#datepicker2" ).datepicker();
+  } );
+
+   $( function() {
+    $( "#datepicker3" ).datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
+  } );
+
+     $( function() {
+    $( "#datepicker4" ).datepicker({
+      numberOfMonths: 3,
+      showButtonPanel: true
+    });
+  } );
+  </script>
+      
+    </body>
+</html>
